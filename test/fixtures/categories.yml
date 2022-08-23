@@ -1,13 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+normalFormat:
   name: MyString
-  description: MyT1
+  description: MyTextMyText
 
-two:
-  name: MyStringMyStringMyString
-  description: MyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyText
-
-three:
+DescLessThan10Char:
   name: MyString
+  description: MyText
+
+DescMoreThan100Char:
+  name: MyString
+  description: MyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyTextMyText
+
+NameMoreThan20Char:
+  name: MyStringMyStringMyStringMyString
   description: MyTextMyText
