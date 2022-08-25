@@ -11,6 +11,7 @@
       </ul>
       </div>
   <% end %>
+  <h1>Edit Task</h1><br>
   
   <%= f.label 'Task Title', class:"form-label" %><br>
   <%= f.text_field :name, class: "form-control" %><br>
@@ -18,5 +19,5 @@
   <%= f.label 'Task Details', class:"form-label" %><br>
   <%= f.text_area :details, class: "form-control" %><br>
 
-  <%= f.submit "Edit Task", class: "btn btn-primary" %>
+  <%= f.submit "Save", class: "btn btn-primary" %>
 <% end %>

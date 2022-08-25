@@ -17,6 +17,10 @@
       <%= f.label :details, class:"form-label" %><br/>
       <%= f.text_area :details, class: "form-control" %>
   </p>
+  <p>
+      <%= f.label :due_date, class:"form-label" %><br/>
+      <%= f.date_field :due_date, :value => Date.today.strftime('%Y-%m-%d'), class: "form-control" %>
+  </p>
 
   <p>
       <%= f.submit "Add Task", class: "btn btn-primary" %>

@@ -15,7 +15,7 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to category_tasks_path
     else
-      render :new
+      render :new, status: 422
     end
   end
 
@@ -39,11 +39,6 @@ class TasksController < ApplicationController
     redirect_to category_tasks_path
   end
 
-  # def today
-  #   @tasks = Task.where(created_at: >= DateTime.current.to_date)
-  #   @task_cat = @category
-  # end
-
   private
 
   def get_category
@@ -51,6 +46,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:name, :details, :category_id)
+    params.require(:task).permit(:name, :details, :category_id, :due_date)
   end
 end

@@ -5,3 +5,6 @@ lessThan3Char:
 
 moreThan20Char:
   name: MyStringMyStringMyString
+
+normalFormat:
+  name: MyString

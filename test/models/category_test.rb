@@ -4,6 +4,7 @@ class CategoryTest < ActiveSupport::TestCase
   setup do
     @lessThan3Char = categories(:lessThan3Char)
     @moreThan20Char = categories(:moreThan20Char)
+    @normalFormat = categories(:normalFormat)
   end
 
   test "should reject category with no name" do
@@ -22,5 +23,11 @@ class CategoryTest < ActiveSupport::TestCase
     category = Category.create(name: @moreThan20Char.name)
     
     assert_not category.save, "Saved category with more than 20 characters"
+  end
+
+  test "should reject category with the same name" do
+    category = Category.create(name: @normalFormat.name)
+    
+    assert_not category.save, "Saved category with the same name"
   end
 end
