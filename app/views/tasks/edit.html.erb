@@ -1,10 +1,22 @@
-<h1>Editing Tasks</h1>
+<%= form_with model: [@category, @task], scope: :task, url: category_task_path(@category.id), method: :patch, local: true do |f| %>
+    
+  <% if @task.errors.any? %>
+      <div style="color: red">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-<%= render "form", category: @category %>
+      <ul>
+          <% @task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+          <% end %>
+      </ul>
+      </div>
+  <% end %>
+  
+  <%= f.label 'Task Title', class:"form-label" %><br>
+  <%= f.text_field :name, class: "form-control" %><br>
 
-<br>
+  <%= f.label 'Task Details', class:"form-label" %><br>
+  <%= f.text_area :details, class: "form-control" %><br>
 
-<div>
-  <%= link_to "Show this tasks", @category, class:"btn btn-outline-primary" %> 
-  <%= link_to "Back to tasks", category_tasks_path, class:"btn btn-secondary" %>
-</div>
+  <%= f.submit "Edit Task", class: "btn btn-primary" %>
+<% end %>

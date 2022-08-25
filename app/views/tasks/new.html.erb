@@ -1,25 +1,25 @@
 <%= form_with model: [@category, @task], local: true do |f| %>
   <p>
-    <% if @task.errors.any? %>
-      <ul>
-        <% @task.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    <% end %>
-  </p>
-  <p>
-    <%= f.label :name , class:"form-label" %><br/>
-    <%= f.text_field :name, class:"form-control"%>
+      <% if @task.errors.any? %>
+          <ul>
+              <% @task.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      <% end %>
   </p>
 
   <p>
-    <%= f.label :description, class:"form-label" %><br/>
-    <%= f.text_field :description, class:"form-control" %>
+      <%= f.label :task_name, class:"form-label" %><br/>
+      <%= f.text_field :name, class: "form-control" %>
   </p>
   <p>
-    <%= f.submit %>
+      <%= f.label :details, class:"form-label" %><br/>
+      <%= f.text_area :details, class: "form-control" %>
+  </p>
+
+  <p>
+      <%= f.submit "Add Task", class: "btn btn-primary" %>
+      <%= link_to "Back to tasks", category_tasks_path, class: "btn btn-secondary mx-2" %> 
   </p>
 <% end %>
-
-<%= link_to "Back to Tasks", category_tasks_path(@category), class: "btn btn-secondary"  %>

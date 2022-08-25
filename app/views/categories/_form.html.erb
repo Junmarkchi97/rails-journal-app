@@ -17,6 +17,7 @@
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Add Category", class: "btn btn-primary" %>
+    <%= link_to "Back to categories", categories_path, class:"btn btn-secondary" %>
   </div>
 <% end %>
