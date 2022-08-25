@@ -1,0 +1,9 @@
+<%= form_with model: @task, scope: :task, url: category_task_path(@category), method: :patch, local: true do |form| %>
+    <%= form.label :title, class:"form-label" %>
+    <%= form.text_field :name, class: "form-control" %><br>
+
+    <%= form.label :Details , class:"form-label" %>
+    <%= form.text_area :description, class: "form-control" %><br>
+
+    <%= form.submit "Edit Task" %>
+<% end %>

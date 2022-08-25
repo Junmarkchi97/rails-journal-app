@@ -1,0 +1,10 @@
+<h1>Editing Tasks</h1>
+
+<%= render "form", category: @category %>
+
+<br>
+
+<div>
+  <%= link_to "Show this tasks", @category, class:"btn btn-outline-primary" %> 
+  <%= link_to "Back to tasks", category_tasks_path, class:"btn btn-secondary" %>
+</div>

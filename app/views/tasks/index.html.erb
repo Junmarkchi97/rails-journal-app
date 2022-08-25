@@ -1,20 +1,23 @@
-<table>
+<table class="table fs-4">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>Body</th>
-    </tr>
+      <th scope="col">Tasks</th>
+      <th scope="col"></th> 
+    </tr> 
   </thead>
-
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
-        <td><%= task.id %></td>
-        <td><%= task.body %></td>
+        <td><%= task.name %></td>
+        <td class="d-flex gap-2">
+          <%= link_to "View", category_tasks_path, class: "btn btn-primary" %>
+          <%= link_to "Edit", edit_category_task_path(@category.id, @tasks), class: "btn btn-outline-primary" %>
+          <%= link_to "Delete", @task, method: :delete, class: "btn btn-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to 'Add Tasks', new_category_task_path(@category) %>
-<%= link_to 'Back to Categories', categories_path %>
+<%= link_to 'Add Tasks', new_category_task_path(@category, @task), class: "btn btn-primary" %>
+<%= link_to 'Back to Categories', categories_path, class: "btn btn-secondary" %>
