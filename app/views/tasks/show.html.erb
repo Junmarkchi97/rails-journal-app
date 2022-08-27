@@ -8,6 +8,7 @@
             <th>Details</th>
             <th>Created</th>
             <th>Last Updated</th>
+            <th>Due_Date</th>
             <th></th>
             <th></th>
         </tr>
@@ -19,11 +20,10 @@
             <td><%= @task.details %></td>
             <td><%= @task.created_at %></td>
             <td><%= @task.updated_at %></td>
+            <td><%= @task.due_date %></td>
             <td class="icons">
                 <%= link_to "", edit_category_task_path(@category.id, @task.id), class:"fa-solid fa-pen-to-square fa-xl" %>
-                
                 <%= button_to "", category_task_path(@category.id, @task.id), method: :delete, class:"fa-solid fa-trash-can fa-xl" %>
-                
             </td>
 
             

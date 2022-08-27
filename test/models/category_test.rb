@@ -7,7 +7,7 @@ class CategoryTest < ActiveSupport::TestCase
     @normalFormat = categories(:normalFormat)
   end
 
-  test "should reject category with no name" do
+  test "should reject category without name" do
     category = Category.create()
 
     assert_not category.save, "Saved category without name"
@@ -27,7 +27,9 @@ class CategoryTest < ActiveSupport::TestCase
 
   test "should reject category with the same name" do
     category = Category.create(name: @normalFormat.name)
+    category1 = Category.create(name: @normalFormat.name)
     
-    assert_not category.save, "Saved category with the same name"
+    category.save
+    assert_not category1.save, "Saved category with the same name"
   end
 end

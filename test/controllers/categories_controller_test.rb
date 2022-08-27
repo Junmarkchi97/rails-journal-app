@@ -3,6 +3,9 @@ require "test_helper"
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @category = categories(:normalFormat)
+    get '/users/sign_in'
+    sign_in users(:user)
+    post user_session_url
   end
 
   test "should get index" do
@@ -17,7 +20,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create category" do
     assert_difference("Category.count") do
-      post categories_url, params: { category: { name: @category.name } }
+      post categories_path, params: { category: { name: "asdassdasd" } }
     end
 
     assert_redirected_to category_url(Category.last)

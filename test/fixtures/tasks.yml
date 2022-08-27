@@ -1,10 +1,25 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  details: MyString
-  category_id: 1
+normalFormat:
+  name: English Exam
+  details: Study for English exam page 1-100
+  category_id: 3
+  due_date: "2022-08-26"
 
-two:
-  details: MyString
+lessThan3Char:
+  name: My
+  details: St
   category_id: 1
+  due_date: "2022-08-26"
+
+moreThan30Char:
+  name: English Exam and Math Exam and Science Exam
+  details: Study for English exam page 1-100
+  category_id: 1
+  due_date: "2022-08-26"
+
+moreThan100Char:
+  name: English Exam
+  details: Study for English exam page 1-100, Study for English exam page 1-100, Study for English exam page 1-100, Study for English exam page 1-100, Study for English exam page 1-100
+  category_id: 3
+  due_date: "2022-08-26"
